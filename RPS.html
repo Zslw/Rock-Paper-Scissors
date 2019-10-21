@@ -6,7 +6,40 @@
     <body>
         <script>
         // JavaScript weas
- 
+            function computerPlay(){
+                const comChoice = ["rock", "paper","scissors"]
+                return comChoice[Math.floor(Math.random()*3)]
+            }
+
+            function myplay(){
+                let maChoice = prompt("Which move will you go with?", "Rock, Paper, or Scissors").toLowerCase();
+            
+            while (maChoice !== 'rock' && maChoice !== 'paper' && maChoice !== 'scissors'){
+                alert("You must select rock, paper or scissors!");
+                maChoice = prompt("Which move will you go with?", "Rock, Paper, or Scissors").toLowerCase();
+            }
+            return maChoice;
+            }
+            function singleRound(playerSelection,computerSelection){
+                playerSelection = myplay();
+            computerSelection = computerPlay();
+
+            console.log( "You chose " + playerSelection + " and the computer chose " + computerSelection + ".");
+                // tide
+                if (playerSelection==computerSelection){
+                    return tide = console.log("Tide")
+                }  // player wins
+                else if(playerSelection == "rock" && computerSelection == "scissors" ||
+                playerSelection == "scissors" && computerSelection == "paper" ||
+                playerSelection == "paper" && computerSelection == "rock") {
+                    return uWin = console.log("You Win")
+                } // computer wins
+                else {
+                    return comWin = console.log("Computer Wins")
+                }
+            }
+
+            
         </script>
     </body>
 </html>
