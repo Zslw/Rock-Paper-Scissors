@@ -21,25 +21,53 @@
             return maChoice;
             }
             function singleRound(playerSelection,computerSelection){
-                playerSelection = myplay();
+            playerSelection = myplay();
             computerSelection = computerPlay();
 
             console.log( "You chose " + playerSelection + " and the computer chose " + computerSelection + ".");
                 // tide
                 if (playerSelection==computerSelection){
-                    return tide = console.log("Tide")
+                    return tide = "It's a tide";
                 }  // player wins
                 else if(playerSelection == "rock" && computerSelection == "scissors" ||
                 playerSelection == "scissors" && computerSelection == "paper" ||
                 playerSelection == "paper" && computerSelection == "rock") {
-                    return uWin = console.log("You Win")
+                    return uWin = "You Win";
                 } // computer wins
                 else {
-                    return comWin = console.log("Computer Wins")
+                    return comWin = "Computer Wins";
                 }
             }
 
-            
+            function bestOfFive(){
+            let numberOfTides = 0;
+            let playerScore = 0;
+            let comScore = 0;
+                console.log("You are going to play a best of 5 series agaist the computer");
+                for(round = 1; round < 6; round++){
+                    let result = singleRound();
+                        if (result == "It's a tide"){
+                            numberOfTides++;
+                        } else if(result == "You Win") {
+                            playerScore++;
+                        } else {
+                            comScore++;
+                        }
+                }
+            while (playerScore == comScore){
+                finalMatch = singleRound();
+                if (finalMatch = "It's a tide"){
+                    numberOfTides=++;
+                } else if (finalMatch = "You Win"){
+                    playerScore++;
+                } else {
+                    comScore++;
+                }
+            }
+            console.log("Final Results: " + numberOfTides + " tides happen.");
+            console.log("You won: " + playerScore + " times.");
+            console.log("Computer won: " + comScore + " times.");
+            }
         </script>
     </body>
 </html>
