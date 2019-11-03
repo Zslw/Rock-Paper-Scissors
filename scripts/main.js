@@ -31,6 +31,12 @@ function printScores(tides,player,coms){
     tideScore.textContent = tides + ' tides had happend.';
     userScore.textContent = 'Your score is : ' + player;
     computerScore.textContent = 'Computer score is : ' + coms;
+    if (player == 5){
+        alert('You win 5 rounds first!! Please Refresh.');
+    } 
+    if (coms == 5){
+        alert('Computer win 5 rounds first. Try again! Please Refresh.');
+    } 
 }
 
 let rock = document.querySelector('#rock');
