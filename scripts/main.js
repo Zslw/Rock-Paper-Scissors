@@ -15,31 +15,47 @@ console.log( "You chose " + playerSelection + " and the computer chose " + compu
     // tide
     if (playerSelection==computerSelection){
         numberOfTides++;
-        return tide = "It's a tide";
     }  // player wins
     else if(playerSelection == "rock" && computerSelection == "scissors" ||
     playerSelection == "scissors" && computerSelection == "paper" ||
     playerSelection == "paper" && computerSelection == "rock") {
         playerScore++;
-        return uWin = "You Win";
     } // computer wins
     else {
         comScore++;
-        return comWin = "Computer Wins";
     }
+    return [numberOfTides, playerScore, comScore];
+}
+
+function printScores(tides,player,coms){
+    tideScore.textContent = tides + ' tides had happend.';
+    userScore.textContent = 'Your score is : ' + player;
+    computerScore.textContent = 'Computer score is : ' + coms;
 }
 
 let rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
-    singleRound('rock');
+   let values = singleRound('rock');
+   let tides = values[0];
+   let player = values[1];
+   let coms = values[2];
+   printScores(tides,player,coms);
 });
 let paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
-    singleRound('paper');
+    let values = singleRound('paper');
+    let tides = values[0];
+    let player = values[1];
+    let coms = values[2];
+    printScores(tides,player,coms);
 });
 let scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
-    singleRound('scissors');
+    let values = singleRound('scissors');
+    let tides = values[0];
+    let player = values[1];
+    let coms = values[2];
+    printScores(tides,player,coms);
 });
 
 //--------------------------------------------------
